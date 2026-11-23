@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Temukan produk pilihan di SANS Shop dengan harga terbaik dan pengiriman ke seluruh Indonesia." />
+    <title>SANS Shop — Marketplace Modern</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="nav container">
+        <a class="brand" href="#" aria-label="SANS Shop beranda">
+          <span class="brand-mark">S</span>
+          <span>SANS Shop</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Navigasi utama">
+          <a class="active" href="#">Beranda</a>
+          <a href="#produk">Produk</a>
+          <a href="#kategori">Kategori</a>
+          <a href="#tentang">Tentang</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="icon-button" id="themeButton" aria-label="Ubah tema">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.64 5.64l1.42 1.42M16.94 16.94l1.42 1.42M18.36 5.64l-1.42 1.42M7.06 16.94l-1.42 1.42"/><circle cx="12" cy="12" r="4"/></svg>
+          </button>
+          <button class="icon-button" id="cartButton" aria-label="Keranjang">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h2l2.2 9.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6L20.5 8H7"/><circle cx="9" cy="19" r="1"/><circle cx="17" cy="19" r="1"/></svg>
+            <span class="cart-count" id="cartCount">0</span>
+          </button>
+          <button class="account-button">Masuk</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero container">
+        <div class="hero-copy">
+          <div class="eyebrow"><span></span> Koleksi terbaru 2026</div>
+          <h1>Temukan barang <em>favoritmu.</em></h1>
+          <p>Belanja produk pilihan dengan harga terbaik, kualitas terjamin, dan pengiriman ke seluruh Indonesia.</p>
+          <div class="hero-search">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="M16 16l4 4"/></svg>
+            <input id="searchInput" type="search" placeholder="Cari produk atau kategori..." aria-label="Cari produk" />
+            <button id="searchButton">Cari</button>
+          </div>
+          <div class="popular">
+            <span>Populer:</span>
+            <button data-search="Kamera">Kamera</button>
+            <button data-search="Sepatu">Sepatu</button>
+            <button data-search="Audio">Audio</button>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-orbit"></div>
+          <div class="hero-card">
+            <div class="hero-label">Pilihan Editor</div>
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85" alt="Sepatu olahraga merah" />
+            <div class="hero-product">
+              <div>
+                <span>Sepatu Run 404</span>
+                <strong>Rp 1.499.000</strong>
+              </div>
+              <button class="round-button" data-add="Sepatu Run 404" aria-label="Tambah Sepatu Run 404">+</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="categories container" id="kategori">
+        <div class="section-heading">
+          <div>
+            <span class="kicker">Jelajahi</span>
+            <h2>Kategori pilihan</h2>
+          </div>
+          <div class="slider-buttons">
+            <button class="slider-button" id="prevCategory" aria-label="Kategori sebelumnya">←</button>
+            <button class="slider-button" id="nextCategory" aria-label="Kategori berikutnya">→</button>
+          </div>
+        </div>
+        <div class="category-grid" id="categoryGrid">
+          <button class="category-card" data-category="Semua"><span class="category-icon">◫</span><strong>Semua</strong><small>48 produk</small></button>
+          <button class="category-card" data-category="Fashion"><span class="category-icon">♢</span><strong>Fashion</strong><small>12 produk</small></button>
+          <button class="category-card" data-category="Elektronik"><span class="category-icon">⌁</span><strong>Elektronik</strong><small>16 produk</small></button>
+          <button class="category-card" data-category="Audio"><span class="category-icon">◉</span><strong>Audio</strong><small>8 produk</small></button>
+          <button class="category-card" data-category="Olahraga"><span class="category-icon">⌁</span><strong>Olahraga</strong><small>12 produk</small></button>
+        </div>
+      </section>
+
+      <section class="products container" id="produk">
+        <div class="section-heading">
+          <div>
+            <span class="kicker">Terlaris</span>
+            <h2>Produk pilihan</h2>
+          </div>
+          <button class="text-button" id="showAll">Lihat semua <span>→</span></button>
+        </div>
+        <div class="product-grid" id="productGrid"></div>
+      </section>
+
+      <section class="promo container" id="tentang">
+        <div class="promo-copy">
+          <span class="kicker">Penawaran spesial</span>
+          <h2>Diskon akhir tahun<br />hingga <em>40%</em></h2>
+          <p>Produk pilihan dengan penawaran terbatas. Jangan sampai kehabisan.</p>
+          <button class="promo-button" id="promoButton">Belanja sekarang <span>→</span></button>
+        </div>
+        <div class="promo-image">
+          <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=85" alt="Jam tangan modern" />
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-inner">
+        <a class="brand" href="#" aria-label="SANS Shop beranda"><span class="brand-mark">S</span><span>SANS Shop</span></a>
+        <p>Belanja mudah, aman, dan menyenangkan.</p>
+        <span>© 2026 SANS Shop</span>
+      </div>
+    </footer>
+
+    <div class="cart-drawer" id="cartDrawer" aria-hidden="true">
+      <div class="drawer-backdrop" id="drawerBackdrop"></div>
+      <aside>
+        <div class="drawer-header">
+          <h2>Keranjang</h2>
+          <button id="closeCart" aria-label="Tutup keranjang">×</button>
+        </div>
+        <div id="cartItems" class="cart-items">
+          <p class="empty-cart">Keranjang masih kosong.</p>
+        </div>
+        <div class="drawer-footer">
+          <div><span>Total</span><strong id="cartTotal">Rp 0</strong></div>
+          <button id="checkoutButton">Checkout</button>
+        </div>
+      </aside>
+    </div>
+
+    <div class="toast" id="toast" role="status">Produk ditambahkan ke keranjang</div>
+    <script src="script.js"></script>
+  </body>
+</html>
